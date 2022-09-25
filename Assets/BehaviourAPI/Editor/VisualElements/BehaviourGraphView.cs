@@ -28,13 +28,25 @@ namespace BehaviourAPI.Editor
             this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
+            this.AddManipulator(new ContextualMenuManipulator(MenuBuilderProvider()));
         }
 
+        private Action<ContextualMenuPopulateEvent> MenuBuilderProvider()
+        {
+            return menuEvent => menuEvent.menu.AppendAction("AddNode", actionEvent => AddElement(CreateNode()));
+        }
 
         private void AddStyles()
         {
             StyleSheet styleSheet = VisualSettings.GetOrCreateSettings().GraphStylesheet;
             styleSheets.Add(styleSheet);
+        }
+
+        public NodeView CreateNode(Vector2 position = default)
+        {
+            NodeView nodeView = new NodeView();
+            this.AddElement(nodeView);
+            return nodeView;
         }
     }
 }

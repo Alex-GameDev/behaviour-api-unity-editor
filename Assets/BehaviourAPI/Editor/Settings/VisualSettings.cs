@@ -15,6 +15,9 @@ namespace BehaviourAPI.Editor
         public VisualTreeAsset InspectorLayout;
         public StyleSheet InspectorStylesheet;
 
+        public VisualTreeAsset NodeLayout;
+        public StyleSheet NodeStylesheet;
+
         public static VisualSettings GetOrCreateSettings()
         {
             var settings = FindSettings();
