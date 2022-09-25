@@ -16,6 +16,22 @@ namespace BehaviourAPI.Editor
             AddStyles();
         }
 
+        public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
+        {
+            List<Port> compatiblePorts = new List<Port>();
+
+            ports.ForEach(port =>
+            {
+                if (port.direction == startPort.direction) return;
+                if (port.portType != startPort.portType) return;
+                if (port == startPort) return;
+                if (port.node == startPort.node) return;
+
+                compatiblePorts.Add(port);
+            });
+            return compatiblePorts;
+        }
+
         private void AddGridBackground()
         {
             GridBackground gridBackground = new GridBackground();
