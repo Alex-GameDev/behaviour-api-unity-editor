@@ -31,12 +31,16 @@ namespace BehaviourAPI.Editor
         {
             BehaviourGraphView behaviourGraphView = new BehaviourGraphView();
             behaviourGraphView.StretchToParentSize();
+
             rootVisualElement.Add(behaviourGraphView);
+
+            Inspector inspector = new Inspector();
+            rootVisualElement.Add(inspector);
         }
 
         private void AddStyles()
         {
-            StyleSheet styleSheet = VisualSettings.GetOrCreateSettings().VariablesStyleSheet;
+            StyleSheet styleSheet = VisualSettings.GetOrCreateSettings().VariablesStylesheet;
             rootVisualElement.styleSheets.Add(styleSheet);
         }
     }

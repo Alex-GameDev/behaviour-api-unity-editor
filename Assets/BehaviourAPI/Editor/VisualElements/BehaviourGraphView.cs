@@ -33,7 +33,7 @@ namespace BehaviourAPI.Editor
 
         private void AddStyles()
         {
-            StyleSheet styleSheet = VisualSettings.GetOrCreateSettings().GraphStyleSheet;
+            StyleSheet styleSheet = VisualSettings.GetOrCreateSettings().GraphStylesheet;
             styleSheets.Add(styleSheet);
         }
     }

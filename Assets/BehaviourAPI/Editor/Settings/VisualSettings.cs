@@ -9,8 +9,11 @@ namespace BehaviourAPI.Editor
     [CreateAssetMenu(fileName = "Behaviour API Visual Settings", menuName = "BehaviourAPI/Editor/VisualSettings", order = 0)]
     public class VisualSettings : ScriptableObject
     {
-        public StyleSheet VariablesStyleSheet;
-        public StyleSheet GraphStyleSheet;
+        public StyleSheet VariablesStylesheet;
+        public StyleSheet GraphStylesheet;
+
+        public VisualTreeAsset InspectorLayout;
+        public StyleSheet InspectorStylesheet;
 
         public static VisualSettings GetOrCreateSettings()
         {
